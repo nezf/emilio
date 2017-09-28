@@ -1,0 +1,20 @@
+- name: Build instance
+  hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Build instance request
+    sl_vm:
+      hostname: instest01
+      domain: test.com
+      datacenter: dal09
+      tags: devel
+      hourly: True
+      private: False
+      dedicated: False
+      local_disk: True
+      cpus: 1
+      memory: 1024
+      disks: [25]
+      os_code: CENTOS_LATEST
+      wait: False
+
